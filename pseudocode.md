@@ -69,3 +69,12 @@ Won't Have:
 
 ## Functions and Components
 1. 
+
+## Pseudocode
+Products page links
+```
+props.products( item => 
+    <Link to={/products/ itemName }>
+        <ItemPage>
+    </Link>
+)
