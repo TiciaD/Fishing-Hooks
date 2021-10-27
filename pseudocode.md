@@ -17,4 +17,55 @@ Must Have:
 - Must start on Home Page
 - Must use conditional rendering to block access to restricted pages/views
 - Must use local storage and React Router to allow user data to persist on reload
-- 
+
+Should Have:
+
+Could Have:
+
+Won't Have:
+- Won't use class components
+- Won't use next.js (yet)
+- Won't do more than 2 paths (yet)
+
+### Path 1 MoSCoW
+Must Have:
+- Must display purchase items
+- Must be able to add multiple items to cart
+    - when click add to cart, check how many of that item
+- Must take user to product page when they click on item
+    - whether item is in cart or on products page
+- Must be able to remove items from cart
+
+Should Have:
+- Should be able to access cart from any page
+- Should give option to change amount of item to add to cart
+- Should ask user to login before they can add to cart if not already logged in
+
+Could Have:
+- Could use Toasts to alert user when item added/removed
+- Could use Modals to ask user to login if not already
+- Could generate random image for each product on product display
+- Could filter products by type
+
+Won't Have:
+- Won't have class components
+- Won't have page reload when clicking tab
+
+### Path 2 MoSCoW
+Must Have:
+- Must have user enter email and payment info
+- Must display order process step and running subtotal, tax, grand total
+- Must update numbers based on user modifying cart or shipping info
+- Must show error notification if user doesn't fill form out completely/correctly
+
+Should Have:
+
+Could Have:
+
+Won't Have:
+
+### Path 3 MoSCoW
+
+
+## Functions and Components
+1. 
