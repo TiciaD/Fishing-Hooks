@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import CartContext from './contexts/CartContext';
 import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -11,7 +12,9 @@ import 'bootstrap/dist/js/bootstrap.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CartContext>
+        <App />
+    </CartContext>
   </React.StrictMode>,
   document.getElementById('root')
 );
