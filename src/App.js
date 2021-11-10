@@ -16,38 +16,62 @@ export const AppContext = createContext();
 function App() {
     // Model
     const [items, setItems] = useState([]);
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+    const [cartAmount, setCartAmount] = useState(0);
     const [isCartShown, setIsCartShown] = useState(false);
 
 
     // Controller
     function addItem(item) {
-        const isInCart = cart.map((currentItem) => currentItem.id).includes(item.id);
-        console.log({InCart: isInCart})
-          let cartItems = null;
-          if (isInCart) {
-            const newCartItems = cart.map((newItem) => {
-              if (newItem.id === item.id) {
-                return {
-                  ...newItem,
-                  amount: newItem.amount + 1
-                };
-              }
-              console.log({newCart: newCartItems});
-              return newItem;
-            });
-            setCart([...newCartItems]);
-          } else {
-            setCart([...cart, item]);
-            console.log({AppCart: cart})
-          }
+        // const isInCart = cart.map((currentItem) => currentItem.id).includes(item.id);
+        // console.log({InCart: isInCart})
+        //   let cartItems = null;
+        //   if (isInCart) {
+        //     const newCartItems = cart.map((newItem) => {
+        //       if (newItem.id === item.id) {
+        //         return {
+        //           ...newItem,
+        //           amount: newItem.amount + 1
+        //         };
+        //       }
+        //       console.log({newCart: newCartItems});
+        //       return newItem;
+        //     });
+        //     setCart([...newCartItems]);
+        //   } else {
+        //     setCart([...cart, item]);
+        //     console.log({AppCart: cart})
+        //   }
+
+        const updatedTotalAmount = cartAmount + item.price * item.amount;
+        console.log({updatedTotal: updatedTotalAmount});
+
+        const existingCartItemIndex = cart.findIndex(
+          (oldItem) => oldItem.id === item.id
+        );
+        console.log({addcart: cart})
+        console.log({eIndex: existingCartItemIndex});
+        const existingCartItem = cart[existingCartItemIndex];
+        console.log({index: existingCartItem});
+        let updatedItems;
+
+        if (existingCartItem) {
+            const updatedItem = {...existingCartItem, amount: existingCartItem.amount + item.amount};
+            updatedItems = [...cart];
+            updatedItems[existingCartItemIndex] = updatedItem;
+        } else {
+            updatedItems = cart.concat(item);
+        }
+        console.log({cartAmount: cartAmount})
+        console.log({updated: updatedItems});
+        return (
+            setCart([...updatedItems]),
+            setCartAmount(updatedTotalAmount)
+        );
     };
 
     function removeItem(item) {
         console.log({item: item})
-        // let filtered = cart.filter(
-        //   (oldItem) => oldItem.id !== item.id);
-        // setCart(filtered)
         const existingCartItemIndex = cart.findIndex(
           (oldItem) => oldItem.id === item.id
         );
@@ -55,7 +79,7 @@ function App() {
         console.log({index: existingCartItemIndex});
         const existingItem = cart[existingCartItemIndex];
         console.log({eItem: existingItem.amount});
-        // // const updatedTotalAmount = state.totalAmount - existingItem.price;
+        const updatedTotalAmount = cartAmount - existingItem.price;
         let updatedItems;
         if (existingItem.amount === 1) {
           updatedItems = cart.filter(oldItems => oldItems.id !== item.id);
@@ -66,7 +90,10 @@ function App() {
           updatedItems = [...cart];
           updatedItems[existingCartItemIndex] = updatedItem;
         }
-        return setCart([...updatedItems]);
+        return (
+            setCart([...updatedItems]),
+            setCartAmount(updatedTotalAmount)
+        );
     }
 
 
@@ -107,7 +134,7 @@ function App() {
         // View
         <Router>
             <div className="App">
-                <AppContext.Provider value={{items, cart, setCart, addItem, removeItem}}>
+                <AppContext.Provider value={{items, cart, setCart, addItem, removeItem, cartAmount}}>
                     <CartProvider>
                         <MyNavbar onShowCart={showCart}/>
                             {isCartShown && <Cart onClose={hideCart} show={isCartShown}/>}

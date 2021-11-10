@@ -5,19 +5,13 @@ import {AppContext} from '../App';
 
 const Cart = (props) => {
     const cartState = useContext(AppContext);
-    console.log({cart: cartState.cart});
-    const handleQuantityIncrease = (index) => {
-        const newItems = [...cartState.cart];
-        
-        let newAmount = {...newItems[index], amount: newItems[index].amount + 1};
-        cartState.setCart(newItems, newAmount);
-    };
+    console.log({cartInCart: cartState.cart});
 
     const cartItems = (
         <ul>
       {cartState.cart.map((item, index) => (
           <CartItem
-          id = {item.id}
+          id={item.id}
           key={item.id}
           name={item.name}
           amount={item.amount}
@@ -44,12 +38,12 @@ const Cart = (props) => {
             <Container>
                 <Row>
                     <Col xs={6} md={4}>
-                        Total Amount: $
+                        Total Amount: ${cartState.cartAmount}
                     </Col>
                     <Col xs={6} md={4}>
                         <Button variant="primary">
                             Order
-                        </Button>}
+                        </Button>
                     </Col>
                     <Col xs={6} md={4}>
                         <Button variant="secondary" onClick={props.onClose}>
