@@ -124,7 +124,24 @@ arr.reduce(reducer, 0)
 Products page links
 ```
 props.products( item => 
-    <Link to={/products/ itemName }>
+    <Link to={/products/ itemId }>
         <ItemPage>
     </Link>
 )
+```
+
+ADD Item
+```
+// find index of item in cart
+// IF item is in cart, spread state of cart and increment amount of item
+// ELSE add item to end of cart array
+// set new state of cart
+```
+
+REMOVE Item
+```
+// find index of item in cart
+// IF item amount is 1 in cart, filter cart and remove item id
+// ELSE spread state of cart and decrement amount of item
+// set new state of cart
+```
