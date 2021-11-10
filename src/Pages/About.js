@@ -10,7 +10,7 @@ export default function About() {
         <div>
             <Container fluid>
                 <Row>
-                    <Col>1 of 1</Col>
+                    <Col>We sell fishing stuff!</Col>
                 </Row>
             </Container>
         </div>

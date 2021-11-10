@@ -6,9 +6,14 @@ import {
   Card,
   Button
 } from 'react-bootstrap';
+import {withRouter} from 'react-router-dom';
 import './Home.css';
 
-export default function Home() {
+function Home(props) {
+    const productNav = () => {
+        props.history.push('/products');
+    };
+
   return (
   <div>
       <img src='/img/tree_background.jpg' className="img-fluid" alt="outdoors"/>
@@ -25,7 +30,7 @@ export default function Home() {
               }>
                   <Card.Img variant="top" src="../img/baitbox_background.jpg"/>
                   <Card.Body>
-                    <Button variant="dark" className="stretched-link">See Accessories</Button>
+                    <Button variant="dark" className="stretched-link" onClick={() => productNav()}>See Accessories</Button>
                   </Card.Body>
               </Card>
             </Col>
@@ -38,7 +43,7 @@ export default function Home() {
               }>
                   <Card.Img variant="top" src="../img/fishing_rods_background.jpg"/>
                   <Card.Body>
-                    <Button variant="dark" className="stretched-link">See Tools</Button>
+                    <Button variant="dark" className="stretched-link" onClick={() => productNav()}>See Tools</Button>
                   </Card.Body>
               </Card>
             </Col>
@@ -47,3 +52,5 @@ export default function Home() {
   </div>
   )
 }
+
+export default withRouter(Home);

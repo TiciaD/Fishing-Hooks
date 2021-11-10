@@ -19,8 +19,10 @@ Must Have:
 - Must use local storage and React Router to allow user data to persist on reload
 
 Should Have:
+- Should use React Bootstrap
 
 Could Have:
+- Could 
 
 Won't Have:
 - Won't use class components
@@ -58,19 +60,67 @@ Must Have:
 - Must update numbers based on user modifying cart or shipping info
 - Must show error notification if user doesn't fill form out completely/correctly
 
-Should Have:
-
-Could Have:
-
-Won't Have:
-
 ### Path 3 MoSCoW
-
+(Come Back Later)
 
 ## Functions and Components
-1. 
+1. App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Hooks Info
+### What is a Reducer?
+- takes 2 arguments, accumulated value (what's being reduced) and next item (next item in array) and reduces them to one value
+
+Example
+```
+arr = [1,2,3,4]
+
+// set function to be applied to each element in array
+reducer = (accumulator, nextItem) => accumulator + nextItem
+
+// pass in function and initial value
+arr.reduce(reducer, 0)
+
+(accumulator) 0 + (nextItem) 1 = 1
+// result becomes new initial value
+(accumulator) 1 + (nextItem) 2 = 3
+(accumulator) 3 + (nextItem) 3 = 6
+(accumulator) 6 + (nextItem) 4 = 10
+```
+
+- useReducer takes 2 arguments, typically current state and action that updates the state, then reduces them down to return one value: the new state
 
 ## Pseudocode
+
+
 Products page links
 ```
 props.products( item => 
