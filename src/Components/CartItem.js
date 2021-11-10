@@ -5,8 +5,14 @@ import {AppContext} from '../App';
 
 const CartItem = (props) => {
     const cartState = useContext(AppContext);
-    const handleRemoveItem = (e) => {
+    const handleRemoveItem = () => {
         cartState.removeItem(props)
+        console.log({cartItem: props});
+        console.log({cartItem: props.amount});
+    }
+
+    const handleAddItem = () => {
+        cartState.addItem(props)
         console.log({cartItem: props});
         console.log({cartItem: props.amount});
     }
@@ -25,7 +31,7 @@ const CartItem = (props) => {
         <Button variant="danger" size="sm" onClick={handleRemoveItem}>
             -
         </Button>{' '}
-        <Button variant="primary" size="sm" onClick={props.handleAddItem}>
+        <Button variant="primary" size="sm" onClick={handleAddItem}>
             +
         </Button>
       </div>

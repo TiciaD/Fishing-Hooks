@@ -1,4 +1,4 @@
-import React, {createContext, useState, useEffect, useReducer} from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 import axios from 'axios';
 import MyNavbar from './Components/Navbar';
 import Home from './Pages/Home';
@@ -56,7 +56,10 @@ function App() {
         let updatedItems;
 
         if (existingCartItem) {
-            const updatedItem = {...existingCartItem, amount: existingCartItem.amount + item.amount};
+            const updatedItem = {...existingCartItem, amount: existingCartItem.amount + 1};
+            console.log(updatedItem)
+            console.log({existingCartitemAmount: existingCartItem.amount})
+            console.log({itemAmount: item.amount})
             updatedItems = [...cart];
             updatedItems[existingCartItemIndex] = updatedItem;
         } else {
