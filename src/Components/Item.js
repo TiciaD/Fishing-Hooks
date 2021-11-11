@@ -16,7 +16,7 @@ const Item = (props) => {
 
   return (
 // View
-    <Col>
+    <Col className="d-flex justify-content-center">
         <Card className="h-100"style={
             {width: '23rem'}
         }>
