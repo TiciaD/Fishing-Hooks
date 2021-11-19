@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Overview
+Website that calls an API with Fishing Products and renders them using React Hooks. Allows user to add/remove items from a cart and calculate total. Part 1 of 3 part project to make an e-commerce website with a shopping cart, a Shipping Info page and a user authentication login dashboard.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+You've been asked to help design a local bait and tackle company's new online store. They are currently the largest supplier of bluegrass fishing equipment and they are super excited to bring their business to the world wide web in hopes they become a fishing phenomenon!
+The store owners want to use the newest technologies available but they only want to pay for one sprint. Your job will require you to use React Hooks so that way their online store can stay current for a long time and require less maintenance since the code footprint will be much smaller, thus, fewer lines of code to write, if done correctly. One more thing: they would like to keep track of their customers so they can add them to an email list, so they will need a strong user authentication (no anonymous transactions).
+For this project, we will be using React Hooks to create a responsive and reactive order form with smart navigation and user auth.
+The basic requirement is to familiarize yourself with hooks, which requires you to go down one of the three paths for this project: User Auth, Shopping Cart, or Shipping Info. Once you complete one of these three paths you are complete, but feel free to achieve the other 2 paths, as well as the trifecta (requires all three paths to be complete): Purchasing a Cart.
 
-## Available Scripts
+## Currently Complete
+#### Path 1 (Shopping Cart) 
+A user can see all the products listed on the products page.
+A user can see a product page when they click on a product (from the products page or from their cart).
+When the user clicks "add to cart" on a product(s), add it to the cart.
+A user can modify the number of total cart items in their cart by adding to the cart from the product page or removing an item from the cart.
+A user can update the number of unique items in their cart (purchase 2 rods vs 1 rod, vs 0 rods [remove from cart if 0]
+A user can remove an item from cart using a remove button.
+A user can clear their cart.
+The cart persists in localstorage.
 
-In the project directory, you can run:
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
