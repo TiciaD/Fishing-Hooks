@@ -9,13 +9,13 @@ The basic requirement is to familiarize yourself with hooks, which requires you 
 
 ## Currently Complete
 #### Path 1 (Shopping Cart) 
-A user can see all the products listed on the products page.
-A user can see a product page when they click on a product (from the products page or from their cart).
-When the user clicks "add to cart" on a product(s), add it to the cart.
-A user can modify the number of total cart items in their cart by adding to the cart from the product page or removing an item from the cart.
-A user can update the number of unique items in their cart (purchase 2 rods vs 1 rod, vs 0 rods [remove from cart if 0]
-A user can remove an item from cart using a remove button.
-A user can clear their cart.
-The cart persists in localstorage.
+- A user can see all the products listed on the products page.
+- A user can see a product page when they click on a product (from the products page or from their cart).
+- When the user clicks "add to cart" on a product(s), add it to the cart.
+- A user can modify the number of total cart items in their cart by adding to the cart from the product page or removing an item from the cart.
+- A user can update the number of unique items in their cart (purchase 2 rods vs 1 rod, vs 0 rods [remove from cart if 0]
+- A user can remove an item from cart using a remove button.
+- A user can clear their cart.
+- The cart persists in localstorage.
 
 
